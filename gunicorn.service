@@ -1,0 +1,17 @@
+[Unit]
+Description=Gunicorn WGSI for Launcher app
+After=network.target
+
+[Service]
+User=pi
+Group=pi
+WorkingDirectory=/home/pi/code/launcher-setup
+Environment="PATH=/home/pi/code/launcher-setup/venv/bin"
+ExecStart=/home/pi/code/launcher-setup/venv/bin/gunicorn --workers 1 --bind 0.0.0.0:8080 main:app
+ExecReload=/bin/kill -s HUP $MAINPID
+KillMode=mixed
+TimeoutStopSec=5
+PrivateTmp=true
+
+[Install]
+WantedBy=multi-user.target
