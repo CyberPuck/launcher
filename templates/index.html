@@ -11,12 +11,12 @@
 </style>
     <head>
         <title>Launcher</title>
-        <link rel="shortcut icon" href="{{ url_for('static', filename='rocket.png') }}">
+        <link rel="shortcut icon" href="{{ url_for('static', filename='starfleet.png') }}">
     </head>
     <body>
         <div class="center">
             <form action="launch" method="post">
-                <input type="submit" name="launch" value="Launch🚀" style="font-size: 10vw;height: 50vh; width:50vw"/>
+                <input type="submit" name="launch" value="Launch" style="font-size: 10vw;height: 50vh; width: 50vw; background-image: url('static/rocket.png');background-repeat: no-repeat;background-position: center; "/>
             </form>
         </div>
     </body>    
